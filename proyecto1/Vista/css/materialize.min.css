@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integradora - Materialize CSS</title>
+    
+    <!-- Materialize CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Estilos Personalizados -->
+    <style>
+        body {
+            background-color: #e0e0e0;
+            padding: 20px;
+            font-family: Roboto, sans-serif;
+        }
+
+        .row {
+            margin-bottom: 0;
+        }
+
+        /* Ajustes de las Tarjetas */
+        .card-panel {
+            min-height: 480px;
+            padding: 20px !important;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+        }
+
+        /* Texto oscuro para fondo amarillo */
+        .card-panel.yellow {
+            color: #333333;
+        }
+
+        /* Texto blanco para los demás paneles */
+        .card-panel.green,
+        .card-panel.red,
+        .card-panel.blue {
+            color: #ffffff;
+        }
+
+        .card-panel span {
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .card-panel h5 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .card-panel h3 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            word-wrap: break-word;
+        }
+
+        /* Campos de Entrada */
+        .card-panel label {
+            color: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .card-panel input[type="text"] {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            height: 2rem;
+            padding: 0 8px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        /* Botón estilo clásico */
+        button {
+            background-color: #f2f2f2;
+            color: #333;
+            border: 1px solid #767676;
+            padding: 4px 12px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 2px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #e5e5e5;
+        }
+
+        /* Resultado de la Suma */
+        #Rs {
+            margin-top: 5px;
+            font-weight: bold;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fila Principal con Grid de Materialize (4 Columnas) -->
+    <div class="row">
+
+        <!-- Columna 01: Suma (Amarillo) -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel yellow">
+                <span><h5>SUMA DE DOS NUMEROS</h5></span>
+                <p>
+                    <label for="vs1">Sumando01:</label>
+                    <input type="text" name="vs1" id="vs1" required>
+                </p>
+                <p>
+                    <label for="vs2">Sumando02:</label>
+                    <input type="text" name="vs2" id="vs2" required>
+                </p>
+                <p>
+                    <button id="boton4">Sumar</button>
+                </p>
+                <p>
+                    <label for="Rs">Resultado:</label>
+                    <h4 id="Rs"></h4>
+                </p>
+            </div>
+        </div>
+
+        <!-- Columna 02: Verde -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel green">
+                <span>Qué puedes hacer con Java Script?</span>
+                <h3 id="titulo1">Java Script puede cambiar el contenido de HTML</h3>
+                <button id="boton1">Hacer Click!</button>
+            </div>
+        </div>
+
+        <!-- Columna 03: Rojo -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel red">
+                <span>Qué puedes hacer con Java Script?</span>
+                <h3 id="titulo2">Java Script puede cambiar el contenido de HTML</h3>
+                <button id="boton2">Hacer Click!</button>
+            </div>
+        </div>
+
+        <!-- Columna 04: Azul -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel blue">
+                <span>Qué puedes hacer con Java Script?</span>
+                <h3 id="titulo3">Java Script puede cambiar el contenido de HTML</h3>
+                <button id="boton3">Hacer Click!</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts: jQuery y Materialize JS vía CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Código JavaScript / Lógica -->
+    <script>
+        $(document).ready(function() {
+            
+            // Lógica de la Suma (Columna 1)
+            $('#boton4').on('click', function(e) {
+                e.preventDefault();
+                var val1 = parseFloat($('#vs1').val());
+                var val2 = parseFloat($('#vs2').val());
+                
+                if (!isNaN(val1) && !isNaN(val2)) {
+                    var suma = val1 + val2;
+                    $('#Rs').text(suma);
+                } else {
+                    $('#Rs').text('Error');
+                    M.toast({html: 'Ingrese números válidos', classes: 'rounded red'});
+                }
+            });
+
+            // Lógica de cambio de texto (Columnas 2, 3 y 4)
+            var textoCambiado = "EnriqueHuaman";
+
+            $('#boton1').on('click', function() {
+                $('#titulo1').text(textoCambiado);
+            });
+
+            $('#boton2').on('click', function() {
+                $('#titulo2').text(textoCambiado);
+            });
+
+            $('#boton3').on('click', function() {
+                $('#titulo3').text(textoCambiado);
+            });
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+.chiste-card {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.img-chiste {
+  height: 120px;
+  object-fit: contain;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.header-banner {
+  background-color: #1565c0; /* Azul principal */
+  color: white;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.title-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- ESTILO DE BOTONES AZULES --- */
+.btn-azul {
+  background-color: #1976d2 !important;
+  color: #ffffff !important;
+  font-weight: bold;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(25, 118, 210, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-azul:hover {
+  background-color: #0d47a1 !important;
+  transform: translateY(-2px);
+}
+
+/* --- ANIMACIÓN DEL SVG --- */
+.svg-animated {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawStroke 3s ease-in-out infinite alternate;
+}
+
+@keyframes drawStroke {
+  0% {
+    stroke-dashoffset: 200;
+    fill: rgba(255, 255, 255, 0);
+  }
+  70% {
+    fill: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: rgba(255, 255, 255, 1);
+  }
+}
+
+/* --- ANIMACIÓN DEL TÍTULO --- */
+.animate-title {
+  animation: slideFadeIn 1.2s ease-out forwards;
+}
+
+/* --- ANIMACIÓN DEL SUBTÍTULO --- */
+.animate-subtitle {
+  animation: pulseText 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseText {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+}
+
+/* --- ESTILOS DE VENTANA EMERGENTE SWEETALERT2 --- */
+.swal2-popup {
+  border-radius: 12px !important;
+  padding: 25px !important;
+}
+
+.swal2-actions .btn-azul {
+  padding: 10px 32px !important;
+  font-size: 1rem !important;
+  border: none !important;
+  cursor: pointer;
+}

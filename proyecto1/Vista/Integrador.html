@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Carga de Materialize CSS desde CDN (arregla los colores) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Integradora</title>
+</head>
+<body>
+<!-- fila 01-->
+<div class="row">
+    <!-- Columna 01-->
+    <div class="col s12 m6 l3">
+        <div class="card-panel yellow">
+            <span>Que puedes hacer con Java Script?</span>
+            <h3 id="titulo">Java Script puede cambiar el contenido de HTML</h3>
+            <button id="boton">Hacer Click</button>
+        </div>
+    </div>
+    <!-- Columna 02-->
+    <div class="col s12 m6 l3">
+        <div class="card-panel green">
+            <span>Que puedes hacer con Java Script?</span>
+            <h3 id="titulo1">Java Script puede cambiar el contenido de HTML</h3>
+            <button id="boton1" onclick="document.getElementById('titulo1').innerHTML=nombre+apellido">Hacer Click</button>
+        </div>
+    </div>
+    <!-- Columna 03-->
+    <div class="col s12 m6 l3">
+        <div class="card-panel red">
+            <span>Que puedes hacer con Java Script?</span>
+            <h3 id="titulo2">Java Script puede cambiar el contenido de HTML</h3>
+            <button id="boton2" onclick="ver()">Hacer Click</button>
+        </div>
+    </div>
+    <!-- Columna 04-->
+    <div class="col s12 m6 l3">
+        <div class="card-panel blue">
+            <span>Que puedes hacer con Java Script?</span>
+            <h3 id="titulo3">Java Script puede cambiar el contenido de HTML</h3>
+            <button id="boton3">Hacer Click</button>
+        </div>
+    </div>
+</div>
+<!-- Segunda fila-->
+<div class="row">
+    <!-- Columna 01-->
+    <div class="col s12 m6 l3">
+        <div class="card-panel yellow">
+            <span><h5>SUMA DE DOS NUMEROS</h5></span>
+            <p>
+                <label for="vs1"><font color="black">Sumando01:</font></label>
+                <input type="text" name="vs1" id="vs1" required="">
+            </p>
+            <p>
+                <label for="vs2"><font color="black">Sumando02:</font></label>
+                <input type="text" name="vs2" id="vs2" required="">
+            </p>
+            <p>
+                <button id="boton4">Sumar</button>
+            </p>
+            <p>
+                <label for="Rs"><font color="black">Resultado:</font></label>
+                <h4 id="Rs"></h4>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="./js/Mostrar.js"></script>
+</body>
+</html>

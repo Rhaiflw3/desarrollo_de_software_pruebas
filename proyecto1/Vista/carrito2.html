@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Virtual - Carrito de Compras</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/comprastyle2.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <!-- Encabezado de la página con Imagen y Título -->
+    <nav class="amber darken-2">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo left flex-logo">
+                <i class="material-icons">shopping_cart</i> Mi Carrito
+            </a>
+        </div>
+    </nav>
+
+    <div class="container section">
+        <h4 class="center-align blue-text text-darken-3">Catálogo de Productos</h4>
+        
+        <!-- Contenedor responsivo de la tienda -->
+        <div id="store-container"></div>
+    </div>
+
+    <!-- Modal / Contenedor del Carrito -->
+    <div id="shopping-cart-container" class="card-panel z-depth-3 hide"></div>
+
+    <!-- jQuery, Materialize JS y Lógica de Compras -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/compras2.js"></script>
+</body>
+</html>

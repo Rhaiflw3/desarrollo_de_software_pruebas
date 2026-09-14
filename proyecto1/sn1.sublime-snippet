@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Estructura de una pagina HTML</title>
+</head>
+<body>
+
+<h1>Mi primera pagina con CSS </h1>
+<p>Este es un parrafo.</p>
+
+<h2>¿Qué puedes hacer con JavaScript?</h2>
+
+<h3>Segundo parrafo con HTML </h3>
+</body>
+</html>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sn1</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

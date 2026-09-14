@@ -1,0 +1,107 @@
+/* ==========================================
+   Estilos Generales y Estructura
+   ========================================== */
+body {
+    background-color: #e0e0e0; /* Fondo gris claro general */
+    padding: 20px;
+    font-family: Roboto, sans-serif;
+}
+
+.row {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   Ajustes para Tarjetas (Card Panels)
+   ========================================== */
+.card-panel {
+    min-height: 480px; /* Asegura que todas las tarjetas tengan la misma altura */
+    padding: 20px !important;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    color: #ffffff; /* Texto en blanco para paneles con color */
+}
+
+/* Texto específico para paneles claros */
+.card-panel.yellow {
+    color: #333333; /* Texto oscuro para el fondo amarillo */
+}
+
+/* Subtítulo / Texto superior */
+.card-panel span {
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Título de la suma */
+.card-panel h5 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Encabezados H3 dentro de las tarjetas */
+.card-panel h3 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    word-wrap: break-word; /* Para que el texto largo no desborde */
+}
+
+/* ==========================================
+   Formularios e Inputs
+   ========================================== */
+.card-panel label {
+    color: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.card-panel input[type="text"] {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    height: 2rem;
+    padding: 0 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.card-panel input[type="text"]:focus {
+    border-bottom: 1px solid #26a69a !important;
+    box-shadow: 0 1px 0 0 #26a69a !important;
+}
+
+/* ==========================================
+   Botones Estilo Nativo
+   ========================================== */
+button {
+    background-color: #f2f2f2;
+    color: #333;
+    border: 1px solid #767676;
+    padding: 4px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #e5e5e5;
+}
+
+button:active {
+    background-color: #cccccc;
+}
+
+/* ==========================================
+   Resultado
+   ========================================== */
+#Rs {
+    margin-top: 5px;
+    font-weight: bold;
+    color: #000;
+}

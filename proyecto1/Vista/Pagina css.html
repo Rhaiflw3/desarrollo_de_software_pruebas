@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Por esto otro: -->
+	<link rel="stylesheet" href="css/estilos1.css">
+	<title>Pagina HTML CSS Estructura de una pagina HTML</title>
+</head>
+<body>
+
+	<!-- Cabecera -->
+	<header>
+		<h1>PAGINA CON CSS</h1>
+	</header>
+
+	<!-- Navegacion -->
+	<nav>
+		<ul>
+			<li><a href="index.html">index</a></li>
+			<li><a href="Pagina01.html">Pagina01</a></li>
+			<li><a href="Pagina02.html">Pagina02</a></li>
+			<li><a href="Blog.html">Blogger</a></li>
+			<li><a href="Contacto.html">Contactos</a></li>
+		</ul>
+	</nav>
+
+	<!-- Bloque principal con fondo verde claro -->
+	<div class="contenedor-principal">
+		
+		<!-- Seccion de contenido (beige) -->
+		<section id="Columna01">
+			<article class="articulo">
+				<h2>MACHUPICCHU:</h2>
+				<p>
+					Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Voluptas beatae, incidunt sequi, ut vel nulla doloribus nihil voluptatum, natus saepe sit delectus quibusdam, facere. Quos, neque cum laudantium nemo similique!
+				</p>
+				<h2>CIUDAD INKA:</h2>
+				<p>
+					Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Voluptas beatae, incidunt sequi, ut vel nulla doloribus nihil voluptatum, natus saepe sit delectus quibusdam, facere. Quos, neque cum laudantium nemo similique!
+				</p>
+				<div class="imagen-contenedor">
+					<img src="img/img1.jpg" alt="Machu Picchu">
+				</div>
+			</article>
+		</section>
+
+		<!-- Lateral con formulario (azul) -->
+		<aside>
+			<div class="card">
+				<h4>FORMULARIO DE SUGERENCIAS:</h4>
+				<form id="formulario1" method="post">
+					<div class="form-group">
+						<label for="vnombre1">Nombre:</label>
+						<input type="text" id="vnombre1" required minlength="3">
+					</div>
+					<div class="form-group">
+						<label for="vapellido1">Apellido:</label>
+						<input type="text" id="vapellido1" required minlength="3">
+					</div>
+					<div class="form-group">
+						<label for="vnacionalidad1">Nacionalidad:</label>
+						<input type="text" id="vnacionalidad1" required minlength="3">
+					</div>
+					<div class="actions">
+						<input type="submit" value="Enviar">
+					</div>
+				</form>
+				<h3 id="respuesta1" class="response-tag"></h3>
+			</div>
+		</aside>
+
+	</div>
+
+	<!-- Filas de 4 columnas -->
+	<div class="row-columnas">
+		<div class="columna col1">
+			<h3>Columna01:</h3>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab saepe officia vel voluptatum recusandae pariatur accusantium accusamus enim! Maxime, tenetur ipsam possimus quo aliquam similique. Qui quas officiis rem?
+			</p>
+		</div>
+		<div class="columna col2">
+			<h3>Columna02:</h3>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab saepe officia vel voluptatum recusandae pariatur accusantium accusamus enim! Maxime, tenetur ipsam possimus quo aliquam similique. Qui quas officiis rem?
+			</p>
+		</div>
+		<div class="columna col3">
+			<h3>Columna03:</h3>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab saepe officia vel voluptatum recusandae pariatur accusantium accusamus enim! Maxime, tenetur ipsam possimus quo aliquam similique. Qui quas officiis rem?
+			</p>
+		</div>
+		<div class="columna col4">
+			<h3>Columna04:</h3>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab saepe officia vel voluptatum recusandae pariatur accusantium accusamus enim! Maxime, tenetur ipsam possimus quo aliquam similique. Qui quas officiis rem?
+			</p>
+		</div>
+	</div>
+
+	<!-- Pie de pagina -->
+	<footer>
+		<h2>Hecho por: DIEGO ALONZO FLOREZ HURTADO</h2>
+	</footer>
+
+</body>
+</html>

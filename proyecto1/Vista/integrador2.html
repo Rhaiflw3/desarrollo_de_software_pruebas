@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Desarrollo de Software I - UAC</title>
+</head>
+<body class="grey lighten-4">
+
+<div class="container-fluid" style="padding: 20px;">
+    <h4 class="center-align">Guía de Ejercicios y Envíos a JavaScript</h4>
+    
+    <!-- FILA 1: Formas de Envío a JS (Llamadas Directas e Implícitas) -->
+    <div class="row">
+        <div class="col s12 m6 l3">
+            <div class="card-panel yellow darken-1 white-text">
+                <span class="card-title"><b>Envío 1: Onclick Directo</b></span>
+                <p>Cambiar contenido directamente en línea.</p>
+                <h6 id="envio1_txt">Texto original</h6>
+                <button class="btn btn-small black" onclick="document.getElementById('envio1_txt').innerHTML='¡Cambiado desde HTML!'">Ejecutar</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel green darken-1 white-text">
+                <span class="card-title"><b>Envío 2: Función en Onclick</b></span>
+                <p>Llamada a función explícita `saludarPersona()`.</p>
+                <h6 id="envio2_txt">Texto original</h6>
+                <button class="btn btn-small black" onclick="saludarPersona()">Ejecutar</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel red darken-1 white-text">
+                <span class="card-title"><b>Envío 3: Evento Listener JS</b></span>
+                <p>EventListener implícito desde archivo `.js`.</p>
+                <h6 id="envio3_txt">Texto original</h6>
+                <button class="btn btn-small black" id="btn_envio3">Ejecutar</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel blue darken-1 white-text">
+                <span class="card-title"><b>Envío 4: Onclick Implícito</b></span>
+                <p>Asignación de evento mediante propiedad `.onclick`.</p>
+                <h6 id="envio4_txt">Texto original</h6>
+                <button class="btn btn-small black" id="btn_envio4">Ejecutar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILA 2: Ejercicios 1 a 4 -->
+    <div class="row">
+        <div class="col s12 m6 l3">
+            <div class="card-panel purple darken-2 white-text">
+                <span class="card-title"><b>1. Mayor de 3 Números</b></span>
+                <input type="number" id="e1_n1" placeholder="Número 1">
+                <input type="number" id="e1_n2" placeholder="Número 2">
+                <input type="number" id="e1_n3" placeholder="Número 3">
+                <button class="btn btn-small black" id="btn_ej1">Calcular</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel teal darken-2 white-text">
+                <span class="card-title"><b>2. Divisible por 2</b></span>
+                <input type="number" id="e2_num" placeholder="Escribe un número">
+                <button class="btn btn-small black" id="btn_ej2">Verificar</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel orange darken-3 white-text">
+                <span class="card-title"><b>3. Extraer Vocales</b></span>
+                <input type="text" id="e3_frase" placeholder="Escribe una frase">
+                <button class="btn btn-small black" id="btn_ej3">Obtener Vocales</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel deep-purple darken-1 white-text">
+                <span class="card-title"><b>4. Divisible por 2,3,5 o 7</b></span>
+                <input type="number" id="e4_num" placeholder="Escribe un número">
+                <button class="btn btn-small black" id="btn_ej4">Comprobar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILA 3: Ejercicios 5 a 8 -->
+    <div class="row">
+        <div class="col s12 m6 l3">
+            <div class="card-panel indigo darken-2 white-text">
+                <span class="card-title"><b>5. Detalle Divisibilidad</b></span>
+                <input type="number" id="e5_num" placeholder="Escribe un número">
+                <button class="btn btn-small black" id="btn_ej5">Analizar</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel cyan darken-3 white-text">
+                <span class="card-title"><b>6. Obtener Divisores</b></span>
+                <input type="number" id="e6_num" placeholder="Escribe un número">
+                <button class="btn btn-small black" id="btn_ej6">Calcular</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel brown darken-1 white-text">
+                <span class="card-title"><b>7. Divisores Comunes</b></span>
+                <input type="number" id="e7_n1" placeholder="Número 1">
+                <input type="number" id="e7_n2" placeholder="Número 2">
+                <button class="btn btn-small black" id="btn_ej7">Calcular Comunes</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel blue-grey darken-2 white-text">
+                <span class="card-title"><b>8. Número Primo</b></span>
+                <input type="number" id="e8_num" placeholder="Escribe un número">
+                <button class="btn btn-small black" id="btn_ej8">Evaluar Primo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILA 4: Operaciones Adicionales -->
+    <div class="row">
+        <div class="col s12 m6 l3">
+            <div class="card-panel pink darken-2 white-text">
+                <span class="card-title"><b>Suma Simple</b></span>
+                <input type="number" id="f4_s1" placeholder="Sumando 1">
+                <input type="number" id="f4_s2" placeholder="Sumando 2">
+                <button class="btn btn-small black" id="btn_f4_suma">Sumar</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel light-green darken-3 white-text">
+                <span class="card-title"><b>Contador de Caracteres</b></span>
+                <input type="text" id="f4_texto" placeholder="Ingresa texto">
+                <button class="btn btn-small black" id="btn_f4_count">Contar</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel deep-orange darken-2 white-text">
+                <span class="card-title"><b>Es Par o Impar</b></span>
+                <input type="number" id="f4_par" placeholder="Número">
+                <button class="btn btn-small black" id="btn_f4_par">Evaluar</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel lime darken-3 white-text">
+                <span class="card-title"><b>Tabla de Multiplicar</b></span>
+                <input type="number" id="f4_tabla" placeholder="Número base">
+                <button class="btn btn-small black" id="btn_f4_tabla">Generar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="./js/mostrar2.js"></script>
+</body>
+</html>

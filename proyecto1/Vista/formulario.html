@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Formularios Interactivos</title>
+    <style>
+        :root {
+            --bg-body: #f4f6f9;
+            --card-bg: #ffffff;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --radius: 10px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h4 {
+            font-size: 1.1rem;
+            color: #1f2937;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: #374151;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="password"],
+        input[type="date"],
+        input[type="time"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.6rem 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: border-color 0.15s ease;
+            background-color: #fafafa;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+
+        .checkbox-group, .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.25rem;
+        }
+
+        .checkbox-group label, .radio-group label {
+            font-weight: normal;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+        }
+
+        button, input[type="submit"], input[type="reset"] {
+            flex: 1;
+            padding: 0.6rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        input[type="submit"], button[type="submit"] {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        input[type="submit"]:hover, button[type="submit"]:hover {
+            background-color: var(--primary-hover);
+        }
+
+        input[type="reset"] {
+            background-color: #e5e7eb;
+            color: #374151;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #d1d5db;
+        }
+
+        .response-tag {
+            margin-top: 0.75rem;
+            font-size: 0.875rem;
+            color: #059669;
+            min-height: 1.25rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Panel de Formularios</h1>
+    <p>Interfaz rediseñada para una mejor experiencia de usuario y accesibilidad</p>
+</header>
+
+<main class="dashboard-grid">
+
+    <!-- FORMULARIO 1 -->
+    <div class="card">
+        <h4>Formulario 1 - Texto</h4>
+        <form id="formulario1" method="post">
+            <div class="form-group">
+                <label for="vnombre1">Nombre</label>
+                <input type="text" id="vnombre1" placeholder="Ej. Juan" required minlength="3" pattern="[A-Za-zÁéíóúÁÉÍÓÚñÑ ]+">
+            </div>
+            <div class="form-group">
+                <label for="vapellido1">Apellido</label>
+                <input type="text" id="vapellido1" placeholder="Ej. Pérez" required minlength="3" pattern="[A-Za-zÁéíóúÁÉÍÓÚñÑ ]+">
+            </div>
+            <div class="form-group">
+                <label for="vnacionalidad1">Nacionalidad</label>
+                <input type="text" id="vnacionalidad1" placeholder="Ej. Peruana" required minlength="3">
+            </div>
+            <div class="actions">
+                <input type="reset" value="Borrar">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+        <h3 id="respuesta1" class="response-tag"></h3>
+    </div>
+
+    <!-- FORMULARIO 2 -->
+    <div class="card">
+        <h4>Formulario 2 - Botón</h4>
+        <form id="formulario2" method="post">
+            <div class="form-group">
+                <label for="vnombre2">Nombre</label>
+                <input type="text" id="vnombre2" placeholder="Ej. Ana" required minlength="3" pattern="[A-Za-zÁéíóúÁÉÍÓÚñÑ ]+">
+            </div>
+            <div class="form-group">
+                <label for="vapellido2">Apellido</label>
+                <input type="text" id="vapellido2" placeholder="Ej. García" required minlength="3" pattern="[A-Za-zÁéíóúÁÉÍÓÚñÑ ]+">
+            </div>
+            <div class="form-group">
+                <label for="vnacionalidad2">Nacionalidad</label>
+                <input type="text" id="vnacionalidad2" placeholder="Ej. Chilena" required minlength="3">
+            </div>
+            <div class="actions">
+                <input type="reset" value="Borrar">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+        <h3 id="respuesta2" class="response-tag"></h3>
+    </div>
+
+    <!-- FORMULARIO 3 -->
+    <div class="card">
+        <h4>Formulario 3 - Botones con Icono</h4>
+        <form id="formulario3" method="post">
+            <div class="form-group">
+                <label for="vnombre3">Nombre</label>
+                <input type="text" id="vnombre3" placeholder="Ej. Carlos" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vapellido3">Apellido</label>
+                <input type="text" id="vapellido3" placeholder="Ej. Mendoza" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vnacionalidad3">Nacionalidad</label>
+                <input type="text" id="vnacionalidad3" placeholder="Ej. Colombiana" required minlength="3">
+            </div>
+            <div class="actions">
+                <button type="submit">
+                    <img src="./img/Epis.jpg" alt="" style="height: 14px; width: 14px;">
+                    Enviar
+                </button>
+            </div>
+        </form>
+        <h3 id="respuesta3" class="response-tag"></h3>
+    </div>
+
+    <!-- FORMULARIO 4 -->
+    <div class="card">
+        <h4>Formulario 4 - Número</h4>
+        <form id="formulario4" method="post">
+            <div class="form-group">
+                <label for="vnombre4">Nombre</label>
+                <input type="text" id="vnombre4" placeholder="Ej. Lucia" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vapellido4">Apellido</label>
+                <input type="text" id="vapellido4" placeholder="Ej. Torres" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vnacionalidad4">Número (1 - 100)</label>
+                <input type="number" id="vnacionalidad4" placeholder="45" required min="1" max="100">
+            </div>
+            <div class="actions">
+                <input type="reset" value="Borrar">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+        <h3 id="respuesta4" class="response-tag"></h3>
+    </div>
+
+    <!-- FORMULARIO 5 -->
+    <div class="card">
+        <h4>Formulario 5 - Fecha</h4>
+        <form id="formulario5" method="post">
+            <div class="form-group">
+                <label for="vnombre5">Nombre</label>
+                <input type="text" id="vnombre5" placeholder="Ej. María" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vapellido5">Apellido</label>
+                <input type="text" id="vapellido5" placeholder="Ej. López" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vfecha">Fecha de Nacimiento</label>
+                <input type="date" id="vfecha" required min="1950-01-01" max="2026-12-31">
+            </div>
+            <div class="actions">
+                <input type="reset" value="Borrar">
+                <button type="submit">
+                    <img src="./img/Epis.jpg" alt="" style="height: 14px; width: 14px;">
+                    Enviar
+                </button>
+            </div>
+        </form>
+        <h3 id="respuesta5" class="response-tag"></h3>
+    </div>
+
+    <!-- FORMULARIO 6 -->
+    <div class="card">
+        <h4>Formulario 6 - Hora</h4>
+        <form id="formulario6" method="post">
+            <div class="form-group">
+                <label for="vnombre6">Nombre</label>
+                <input type="text" id="vnombre6" placeholder="Ej. Pedro" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vapellido6">Apellido</label>
+                <input type="text" id="vapellido6" placeholder="Ej. Gómez" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vtiempo">Horario (08:00 - 20:00)</label>
+                <input type="time" id="vtiempo" required min="08:00" max="20:00">
+            </div>
+            <div class="actions">
+                <input type="reset" value="Borrar">
+                <button type="submit">
+                    <img src="./img/Epis.jpg" alt="" style="height: 14px; width: 14px;">
+                    Enviar
+                </button>
+            </div>
+        </form>
+        <h3 id="respuesta6" class="response-tag"></h3>
+    </div>
+
+    <!-- FORMULARIO 7 -->
+    <div class="card">
+        <h4>Formulario 7 - Casillas de Selección</h4>
+        <form id="formulario7" method="post">
+            <div class="form-group">
+                <label for="vnombre7">Nombre</label>
+                <input type="text" id="vnombre7" placeholder="Ej. Sofía" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vapellido7">Apellido</label>
+                <input type="text" id="vapellido7" placeholder="Ej. Castro" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label>Colores Favoritos</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="vchequeo1" value="Rojo"> Rojo</label>
+                    <label><input type="checkbox" id="vchequeo2" value="Verde"> Verde</label>
+                    <label><input type="checkbox" id="vchequeo3" value="Azul"> Azul</label>
+                </div>
+            </div>
+            <div class="actions">
+                <input type="reset" value="Borrar">
+                <button type="submit">
+                    <img src="./img/Epis.jpg" alt="" style="height: 14px; width: 14px;">
+                    Enviar
+                </button>
+            </div>
+        </form>
+        <h3 id="respuesta7" class="response-tag"></h3>
+    </div>
+
+    <!-- FORMULARIO 8 -->
+    <div class="card">
+        <h4>Formulario 8 - Contraseña</h4>
+        <form id="formulario8" method="post">
+            <div class="form-group">
+                <label for="vnombre8">Nombre</label>
+                <input type="text" id="vnombre8" placeholder="Ej. Diego" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vapellido8">Apellido</label>
+                <input type="text" id="vapellido8" placeholder="Ej. Morales" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vcontrasena">Contraseña</label>
+                <input type="password" id="vcontrasena" placeholder="••••••••" required minlength="6" maxlength="12">
+            </div>
+            <div class="actions">
+                <input type="reset" value="Borrar">
+                <button type="submit">
+                    <img src="./img/Epis.jpg" alt="" style="height: 14px; width: 14px;">
+                    Enviar
+                </button>
+            </div>
+        </form>
+        <h3 id="respuesta8" class="response-tag"></h3>
+    </div>
+
+    <!-- FORMULARIO 9 -->
+    <div class="card">
+        <h4>Formulario 9 - Opciones Únicas</h4>
+        <form id="formulario9" method="post">
+            <div class="form-group">
+                <label for="vnombre9">Nombre</label>
+                <input type="text" id="vnombre9" placeholder="Ej. Elena" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vapellido9">Apellido</label>
+                <input type="text" id="vapellido9" placeholder="Ej. Ramos" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label>Seleccione una Opción</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="opcion_radio" value="Opcion1" id="vradio1" required> Opción 1</label>
+                    <label><input type="radio" name="opcion_radio" value="Opcion2" id="vradio2"> Opción 2</label>
+                    <label><input type="radio" name="opcion_radio" value="Opcion3" id="vradio3"> Opción 3</label>
+                </div>
+            </div>
+            <div class="actions">
+                <input type="reset" value="Borrar">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+        <h3 id="respuesta9" class="response-tag"></h3>
+    </div>
+
+    <!-- FORMULARIO 10 -->
+    <div class="card">
+        <h4>Formulario 10 - Rango / Nivel</h4>
+        <form id="formulario10" method="post">
+            <div class="form-group">
+                <label for="vnombre10">Nombre</label>
+                <input type="text" id="vnombre10" placeholder="Ej. Javier" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vapellido10">Apellido</label>
+                <input type="text" id="vapellido10" placeholder="Ej. Vargas" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vrango">Nivel (Malo / Regular / Bueno)</label>
+                <input type="range" id="vrango" min="1" max="3" value="2" required style="width:100%;">
+            </div>
+            <div class="actions">
+                <input type="reset" value="Borrar">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+        <h3 id="respuesta10" class="response-tag"></h3>
+    </div>
+
+    <!-- FORMULARIO 11 -->
+    <div class="card">
+        <h4>Formulario 11 - Área de Texto</h4>
+        <form id="formulario11" method="post">
+            <div class="form-group">
+                <label for="vnombre11">Nombre</label>
+                <input type="text" id="vnombre11" placeholder="Ej. Laura" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vapellido11">Apellido</label>
+                <input type="text" id="vapellido11" placeholder="Ej. Mendoza" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vareatexto">Mensaje</label>
+                <textarea id="vareatexto" rows="3" required minlength="10" maxlength="200" placeholder="Escribe un mensaje..."></textarea>
+            </div>
+            <div class="actions">
+                <input type="reset" value="Borrar">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+        <h3 id="respuesta11" class="response-tag"></h3>
+    </div>
+
+    <!-- FORMULARIO 12 -->
+    <div class="card">
+        <h4>Formulario 12 - Menú Desplegable</h4>
+        <form id="formulario12" method="post">
+            <div class="form-group">
+                <label for="vnombre12">Nombre</label>
+                <input type="text" id="vnombre12" placeholder="Ej. Gabriel" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vapellido12">Apellido</label>
+                <input type="text" id="vapellido12" placeholder="Ej. Silva" required minlength="3">
+            </div>
+            <div class="form-group">
+                <label for="vseleccion">Selección</label>
+                <select id="vseleccion" required>
+                    <option value="" disabled selected>-- Seleccione una opción --</option>
+                    <option value="Uno">Uno</option>
+                    <option value="Dos">Dos</option>
+                    <option value="Tres">Tres</option>
+                </select>
+            </div>
+            <div class="actions">
+                <input type="reset" value="Borrar">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+        <h3 id="respuesta12" class="response-tag"></h3>
+    </div>
+
+</main>
+
+<script src="./js/apps.js"></script>
+
+</body>
+</html>

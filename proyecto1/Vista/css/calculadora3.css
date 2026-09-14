@@ -1,0 +1,116 @@
+/* Estilos Generales */
+body {
+    background-color: #808080;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.row {
+    margin-bottom: 15px;
+}
+
+/* Tarjetas (Card Panels) */
+.card-panel {
+    padding: 15px !important;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+    min-height: 420px;
+    color: #ffffff;
+}
+
+/* Colores de Paneles */
+.card-panel.yellow-panel { 
+    background-color: #c0b000 !important; 
+    color: #000; 
+}
+
+.card-panel.green-panel { 
+    background-color: #2e7d32 !important; 
+}
+
+.card-panel.red-panel { 
+    background-color: #c62828 !important; 
+}
+
+.card-panel.blue-panel { 
+    background-color: #1565c0 !important; 
+}
+
+.card-panel.grey-panel { 
+    background-color: #9e9e9e !important; 
+    color: #000; 
+}
+
+/* Encabezados y Texto interno */
+.card-panel span {
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card-panel h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.card-panel h3 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Formulario e Inputs */
+.card-panel label {
+    color: inherit;
+    font-size: 0.85rem;
+}
+
+.card-panel input[type="text"], 
+.card-panel input[type="number"] {
+    background-color: rgba(255,255,255,0.2);
+    border: 1px solid #ccc;
+    height: 2rem;
+    padding: 0 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    color: inherit;
+}
+
+/* Botones */
+button {
+    background-color: #e0e0e0;
+    color: #000;
+    border: 1px solid #767676;
+    padding: 3px 10px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+
+button:active {
+    background-color: #7e57c2;
+    color: #fff;
+}
+
+/* Resultados y tamaños de fuente */
+.resultado {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.texto-mediano {
+    font-size: 1.1rem;
+}
+
+.texto-chico {
+    font-size: 1rem;
+}
+
+.texto-muy-chico {
+    font-size: 0.85rem;
+}

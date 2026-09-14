@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chistes DS-I - Ranking de Estudiantes</title>
+
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- SweetAlert2 CSS (Ventanas modales emergentes) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+  <!-- CSS Personalizado dentro de la carpeta css/ -->
+  <link rel="stylesheet" href="css/chistesstyle3.css">
+
+  <!-- Lógica JavaScript dentro de la carpeta js/ -->
+  <script src="js/compras3.js" defer></script>
+</head>
+<body class="grey lighten-4">
+
+  <!-- Encabezado / Banner Superior -->
+  <div class="header-banner center-align z-depth-1">
+    <div class="container">
+      <img src="https://cdn-icons-png.flaticon.com/512/166/166088.png" alt="Chistes DS-I" style="height: 80px;">
+      <h3 class="bold animate-title" style="margin: 10px 0 5px 0;">Chistes DS-I</h3>
+      <p class="flow-text animate-subtitle" style="margin: 0;">Colección de chistes de los estudiantes del salón</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Panel del Resumen General y Ranking Top -->
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel white z-depth-1" style="border-radius: 8px;">
+          <h5 class="blue-text text-darken-3 bold" style="margin-top: 0; display: flex; align-items: center; gap: 8px;">
+            <i class="material-icons">analytics</i> Resumen General y Ranking del Salón
+          </h5>
+          <div id="resumen-total" class="flow-text bold" style="margin-bottom: 15px;"></div>
+          <div id="resumen-estudiantes" class="row style-stats" style="margin-bottom: 0;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenedor dinámico por Estudiantes -->
+    <div id="contenedor-estudiantes"></div>
+  </div>
+
+  <!-- SweetAlert2 JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Materialize JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

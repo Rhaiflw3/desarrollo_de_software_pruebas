@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo de Software I - UAC</title>
+
+    <!-- 1. Estilos CDN de Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- 2. Estilos CDN de SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- 3. Hoja de Estilos Personalizada -->
+    <link rel="stylesheet" href="calculadora3.css">
+</head>
+<body>
+
+    <!-- ================= FILA 1: TIPOS DE ENVÍO A JAVASCRIPT ================= -->
+    <div class="row">
+        <!-- Panel 1: innerHTML -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel yellow-panel">
+                <span>Qué puedes hacer con JavaScript?</span>
+                <h3 id="t1">Cambie el texto de H3</h3>
+                <button onclick="cambiarTextoInnerHTML()">Hacer Click!</button>
+            </div>
+        </div>
+
+        <!-- Panel 2: document.write() -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel green-panel">
+                <span>Qué puedes hacer con JavaScript?</span>
+                <h3 id="t2">Diego Alonzo Florez Hurtado</h3>
+                <button onclick="ejecutarDocumentWrite()">Hacer Click!</button>
+            </div>
+        </div>
+
+        <!-- Panel 3: window.alert() -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel red-panel">
+                <span>Qué puedes hacer con JavaScript?</span>
+                <h3 id="t3">Diego Alonzo Florez Hurtado</h3>
+                <button onclick="ejecutarWindowAlert()">Hacer Click!</button>
+            </div>
+        </div>
+
+        <!-- Panel 4: console.log() -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel blue-panel">
+                <span>Qué puedes hacer con JavaScript?</span>
+                <h3 id="t4">Diego Alonzo Florez Hurtado</h3>
+                <button onclick="ejecutarConsoleLog()">Hacer Click!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FILA 2: EJERCICIOS 1 AL 4 ================= -->
+    <div class="row">
+        <!-- Panel 5: Ejercicio 1 (Mayor de 3 números) -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel yellow-panel">
+                <h5>MAYOR DE TRES NÚMEROS</h5>
+                <label for="e1_n1">Número 01:</label>
+                <input type="number" id="e1_n1">
+                <label for="e1_n2">Número 02:</label>
+                <input type="number" id="e1_n2">
+                <label for="e1_n3">Número 03:</label>
+                <input type="number" id="e1_n3">
+                <button onclick="ejercicio1()">Hacer Click!</button>
+                <label>Resultado:</label>
+                <div id="e1_res" class="resultado"></div>
+            </div>
+        </div>
+
+        <!-- Panel 6: Ejercicio 2 (Divisible por 2) -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel grey-panel">
+                <h5>DIVISIBLE POR 2</h5>
+                <label for="e2_n1">Número:</label>
+                <input type="number" id="e2_n1">
+                <button onclick="ejercicio2()">Hacer Click!</button>
+                <label>Resultado:</label>
+                <div id="e2_res" class="resultado"></div>
+            </div>
+        </div>
+
+        <!-- Panel 7: Ejercicio 3 (Vocales de una frase) -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel grey-panel">
+                <h5>VOCALES DE UNA FRASE</h5>
+                <label for="e3_txt">Frase:</label>
+                <input type="text" id="e3_txt">
+                <button onclick="ejercicio3()">Hacer Click!</button>
+                <label>Resultado:</label>
+                <div id="e3_res" class="resultado texto-chico"></div>
+            </div>
+        </div>
+
+        <!-- Panel 8: Ejercicio 4 (Divisible por 2, 3, 5 o 7) -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel grey-panel">
+                <h5>DIVISIBLE POR 2, 3, 5 O 7</h5>
+                <label for="e4_n1">Número:</label>
+                <input type="number" id="e4_n1">
+                <button onclick="ejercicio4()">Hacer Click!</button>
+                <label>Resultado:</label>
+                <div id="e4_res" class="resultado texto-chico"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FILA 3: EJERCICIOS 5 AL 8 ================= -->
+    <div class="row">
+        <!-- Panel 9: Ejercicio 5 (Todos los divisores 2, 3, 5, 7) -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel grey-panel">
+                <h5>TODOS LOS DIVISORES (2,3,5,7)</h5>
+                <label for="e5_n1">Número:</label>
+                <input type="number" id="e5_n1">
+                <button onclick="ejercicio5()">Hacer Click!</button>
+                <label>Resultado:</label>
+                <div id="e5_res" class="resultado texto-muy-chico"></div>
+            </div>
+        </div>
+
+        <!-- Panel 10: Ejercicio 6 (Divisores de un número) -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel grey-panel">
+                <h5>DIVISORES DE UN NÚMERO</h5>
+                <label for="e6_n1">Número:</label>
+                <input type="number" id="e6_n1">
+                <button onclick="ejercicio6()">Hacer Click!</button>
+                <label>Resultado:</label>
+                <div id="e6_res" class="resultado texto-chico"></div>
+            </div>
+        </div>
+
+        <!-- Panel 11: Ejercicio 7 (Divisores comunes) -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel grey-panel">
+                <h5>DIVISORES COMUNES</h5>
+                <label for="e7_n1">Número 01:</label>
+                <input type="number" id="e7_n1">
+                <label for="e7_n2">Número 02:</label>
+                <input type="number" id="e7_n2">
+                <button onclick="ejercicio7()">Hacer Click!</button>
+                <label>Resultado:</label>
+                <div id="e7_res" class="resultado texto-chico"></div>
+            </div>
+        </div>
+
+        <!-- Panel 12: Ejercicio 8 (Número Primo) -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel grey-panel">
+                <h5>¿ES NÚMERO PRIMO?</h5>
+                <label for="e8_n1">Número:</label>
+                <input type="number" id="e8_n1">
+                <button onclick="ejercicio8()">Hacer Click!</button>
+                <label>Resultado:</label>
+                <div id="e8_res" class="resultado texto-mediano"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FILA 4: PANELES COMPLEMENTARIOS ================= -->
+    <div class="row">
+        <div class="col s12 m6 l3">
+            <div class="card-panel grey-panel">
+                <h5>OPERACIÓN COMPLEMENTARIA</h5>
+                <p>Panel reservado para pruebas adicionales.</p>
+                <button onclick="lanzarAlertaExito()">Hacer Click!</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel grey-panel">
+                <h5>OPERACIÓN COMPLEMENTARIA</h5>
+                <p>Panel reservado para pruebas adicionales.</p>
+                <button onclick="lanzarAlertaExito()">Hacer Click!</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel grey-panel">
+                <h5>OPERACIÓN COMPLEMENTARIA</h5>
+                <p>Panel reservado para pruebas adicionales.</p>
+                <button onclick="lanzarAlertaExito()">Hacer Click!</button>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card-panel grey-panel">
+                <h5>OPERACIÓN COMPLEMENTARIA</h5>
+                <p>Panel reservado para pruebas adicionales.</p>
+                <button onclick="lanzarAlertaExito()">Hacer Click!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Librerías JS en orden de dependencia -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Archivo JS Personalizado -->
+    <script src="calculadora2.js"></script>
+</body>
+</html>

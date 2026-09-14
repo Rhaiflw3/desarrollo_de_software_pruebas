@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integradora - Materialize CSS</title>
+    
+    <!-- Materialize CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <style>
+        body {
+            background-color: #dcdcdc;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .row {
+            margin-bottom: 20px;
+        }
+
+        /* Estilos generales para las tarjetas */
+        .card-panel {
+            padding: 20px !important;
+            border-radius: 2px;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
+            min-height: 480px;
+        }
+
+        /* Colores */
+        .card-panel.yellow {
+            background-color: #ffeb3b !important;
+            color: #000000;
+        }
+
+        .card-panel.green {
+            background-color: #4caf50 !important;
+            color: #ffffff;
+        }
+
+        .card-panel.red {
+            background-color: #f44336 !important;
+            color: #ffffff;
+        }
+
+        .card-panel.blue {
+            background-color: #2196f3 !important;
+            color: #ffffff;
+        }
+
+        /* Tarjeta amarilla corta de la segunda fila */
+        .card-panel.short-card {
+            min-height: auto !important;
+            height: 240px;
+        }
+
+        /* Textos y títulos */
+        .card-panel span {
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .card-panel h5 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .card-panel h3 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            word-wrap: break-word;
+        }
+
+        /* Inputs y Labels */
+        .card-panel label {
+            color: #000000;
+            font-size: 0.9rem;
+        }
+
+        .card-panel input[type="text"] {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            height: 2rem;
+            padding: 0 5px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        /* Botón gris */
+        button {
+            background-color: #f0f0f0;
+            color: #000;
+            border: 1px solid #767676;
+            padding: 3px 10px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        button:active {
+            background-color: #26a69a;
+            color: #fff;
+        }
+
+        /* Resultado */
+        #Rs {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #000;
+            margin-top: 5px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #a0a0a0;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= FILA 01 ================= -->
+    <div class="row">
+
+        <!-- Columna 01: SUMA DE DOS NÚMEROS -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel yellow">
+                <h5>SUMA DE DOS NUMEROS</h5>
+                <p>
+                    <label for="vs1">Sumando01:</label>
+                    <input type="text" name="vs1" id="vs1" required>
+                </p>
+                <p>
+                    <label for="vs2">Sumando02:</label>
+                    <input type="text" name="vs2" id="vs2" required>
+                </p>
+                <p>
+                    <button id="boton4">Sumar</button>
+                </p>
+                <p>
+                    <label for="Rs">Resultado:</label>
+                    <div id="Rs"></div>
+                </p>
+            </div>
+        </div>
+
+        <!-- Columna 02: Verde -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel green">
+                <span>Qué puedes hacer con Java Script?</span>
+                <h3 id="titulo1">Java Script puede cambiar el contenido de HTML</h3>
+                <button id="boton1">Hacer Click!</button>
+            </div>
+        </div>
+
+        <!-- Columna 03: Roja -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel red">
+                <span>Qué puedes hacer con Java Script?</span>
+                <h3 id="titulo2">Java Script puede cambiar el contenido de HTML</h3>
+                <button id="boton2">Hacer Click!</button>
+            </div>
+        </div>
+
+        <!-- Columna 04: Azul -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel blue">
+                <span>Qué puedes hacer con Java Script?</span>
+                <h3 id="titulo3">Java Script puede cambiar el contenido de HTML</h3>
+                <button id="boton3">Hacer Click!</button>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <!-- ================= FILA 02 ================= -->
+    <div class="row">
+
+        <!-- Columna 01: Tarjeta corta -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel yellow short-card">
+                <span>Qué puedes hacer con JavaScript?</span>
+                <h3 id="titulo_f2_1">Diego Alonzo Florez Hurtado</h3>
+                <button id="boton_f2_1">Hacer Click!</button>
+            </div>
+        </div>
+
+        <!-- Columna 02: Verde -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel green">
+                <span>Qué puedes hacer con JavaScript?</span>
+                <h3 id="titulo_f2_2">Diego Alonzo Florez Hurtado</h3>
+                <button id="boton_f2_2">Hacer Click!</button>
+            </div>
+        </div>
+
+        <!-- Columna 03: Roja -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel red">
+                <span>Qué 0puedes hacer con JavaScript?</span>
+                <h3 id="ti0tulo_f2_3">Diego Alonzo Florez Hurtado</h3>
+                <button id="boton_f2_3">Hacer Click!</button>
+            </div>
+        </div>
+
+        <!-- Columna 04: Azul -->
+        <div class="col s12 m6 l3">
+            <div class="card-panel blue">
+                <span>Qué puedes hacer con JavaScript?</span>
+                <h3 id="titulo_f2_4">Diego Alonzo Florez Hurtado</h3>
+                <button id="boton_f2_4">Hacer Click!</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            
+            // Función para realizar la suma
+            $('#boton4').on('click', function(e) {
+                e.preventDefault();
+                var num1 = parseFloat($('#vs1').val());
+                var num2 = parseFloat($('#vs2').val());
+                
+                if (!isNaN(num1) && !isNaN(num2)) {
+                    $('#Rs').text(num1 + num2);
+                } else {
+                    $('#Rs').text('Error');
+                }
+            });
+
+            // Nombre asignado
+            var nombreCompleto = "Diego Alonzo Florez Hurtado";
+
+            // Cambios de texto para los botones de la Fila 1
+            $('#boton1').on('click', function() {
+                $('#titulo1').text(nombreCompleto);
+            });
+
+            $('#boton2').on('click', function() {
+                $('#titulo2').text(nombreCompleto);
+            });
+
+            $('#boton3').on('click', function() {
+                $('#titulo3').text(nombreCompleto);
+            });
+
+            // Evento para el botón de la tarjeta corta en Fila 2
+            $('#boton_f2_1').on('click', function() {
+                $('#titulo_f2_1').text(nombreCompleto);
+            });
+
+        });
+    </script>
+</body>
+</html>
